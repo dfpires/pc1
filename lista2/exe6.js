@@ -1,18 +1,34 @@
 function calcula(){
-	var numero1, numero2, opcao, resposta = "";
+	var preco, numero2, opcao, resposta = "";
 	// recupera dados do usuário
-	numero1 = parseFloat(document.getElementById("numero1").value);
-	numero2 = parseFloat(document.getElementById("numero2").value);
-	opcao = document.getElementById("opcao").value;
+	preco = parseFloat(document.getElementById("preco").value);
+	codigo = parseFloat(document.getElementById("codigo").value);
 	// calcula 
-	switch(opcao){
-		case 'a': resposta = Math.pow(numero1, numero2);
-				break; // pára o teste das escolhas e sai do switch
-		case 'b': resposta = Math.sqrt(numero1) + " e " + Math.sqrt(numero2)
-				break; // pára o teste das escolhas e sai do switch
-		case 'c': resposta = Math.cbrt(numero1) + " e " + Math.cbrt(numero2)
-				break; // pára o teste das escolhas e sai do switch
-		default: resposta = "Opção inválida";
+	if (codigo == 1){
+		resposta = "Sul";
 	}
+	else if (codigo == 2){
+			resposta = "Norte";
+		}
+		else if (codigo == 3){
+				resposta = "Leste";
+			}
+			else if (codigo == 4){
+					resposta = "Oeste";
+				}
+				else if ((codigo == 5) || (codigo == 6)){
+						resposta = "Nordeste";
+					}
+					else if ((codigo == 7) || (codigo == 8) || (codigo == 9)){
+							resposta = "Sudeste";
+						 }
+						 else if ((codigo >= 10) && (codigo <= 20)){
+								resposta = "Centro Oeste";
+							  }
+							  else if ((codigo >= 21) && (codigo <= 30)){
+										resposta = "Nordeste";
+								   }
+								   else resposta = "Código inexistente";
+				
 	document.getElementById("r1").innerHTML = resposta;	
 }
